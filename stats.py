@@ -19,7 +19,7 @@ def char_count(book):
     letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k',
     'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v',
     'w', 'x', 'y', 'z']
-    # for char in chars:
+
     for letter in letters:
         for char in chars:
             if char == letter:
@@ -43,12 +43,13 @@ def sort_dicts(book):
 def formatted(book):
     words = word_count(book)
     sorted_dicts = sort_dicts(book)
-    print(f"""============ BOOKBOT ============
-Analyzing book found at books/frankenstein.txt...
------------ Word Count ----------
-Found {words} total words
---------- Character Count -------
-    """)
+    print(
+        f"============ BOOKBOT ============\n"
+        f"Analyzing book found at {book}...\n"
+        f"----------- Word Count ----------\n"
+        f"Found {words} total words\n"
+        f"--------- Character Count -------"
+    )
     for d in sorted_dicts:
         print(f"{d["char"]}: {d["num"]}")
 
