@@ -29,4 +29,29 @@ def char_count(book):
                 else:
                     char_dict[char] += 1
     return char_dict
-    
+
+def sort_dicts(book):
+    word_count = get_book_text(book)
+    char_dict = char_count(book)
+    sorted_output = []
+    for char in char_dict:
+        amount = char_dict[char]       
+        sorted_output.append({"char": char, "num": amount})
+    sorted_output.sort(reverse=True, key=sort_on)
+    return sorted_output
+
+def formatted(book):
+    words = word_count(book)
+    sorted_dicts = sort_dicts(book)
+    print(f"""============ BOOKBOT ============
+Analyzing book found at books/frankenstein.txt...
+----------- Word Count ----------
+Found {words} total words
+--------- Character Count -------
+    """)
+    for d in sorted_dicts:
+        print(f"{d["char"]}: {d["num"]}")
+
+# helpers
+def sort_on(items):
+    return items["num"]
