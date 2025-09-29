@@ -5,15 +5,9 @@ from stats import sort_dicts
 from stats import formatted
 
 def main():
-    total_words = word_count("./books/frankenstein.txt")
-    print(f"Found {total_words} total words")
-
-    char_stats = char_count("./books/frankenstein.txt")
-    print(char_stats)
-
-    output = sort_dicts("./books/frankenstein.txt")
-    print(output)
-
-    formatted("./books/frankenstein.txt")
+    if len(sys.argv) != 2:
+        print("Usage: python3 main.py <path_to_book>")
+        sys.exit(1)
+    formatted(f"{sys.argv[1]}")
     
 main()
