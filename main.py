@@ -1,8 +1,5 @@
 import sys
-from stats import word_count
-from stats import char_count
-from stats import sort_dicts
-from stats import formatted
+from stats import word_count, char_count, sort_dicts, formatted
 
 def main():
     if len(sys.argv) != 2:
